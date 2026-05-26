@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre | Tabela Periódica</title>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    .about-hero {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+    }
+    .about-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .about-hero p {
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .member-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .member-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .member-top {
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      background: linear-gradient(180deg, var(--bg-surface), var(--bg-card));
+    }
+
+    .member-avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+    .member-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      aspect-ratio: calc(1/1);
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    .member-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .member-number {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+    }
+    .member-role {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+    }
+
+    .member-body {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .member-interests {
+      margin-bottom: 1.2rem;
+    }
+    .member-interests h4 {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--text-dim);
+      margin-bottom: 0.6rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tag {
+      padding: 0.2rem 0.6rem;
+      background: var(--bg-surface);
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .member-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Project info section */
+    .project-info {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .project-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .project-box h2 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .project-box p {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .tech-badge {
+      padding: 0.3rem 0.8rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="../index.html">Tabela<span>.</span>Periódica</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="../alkali-metals/index.html">Alcalinos</a></li>
+      <li><a href="../alkaline-earth-metals/index.html">Alcalinoterrosos</a></li>
+      <li><a href="../transition-metals/index.html">Transição</a></li>
+      <li><a href="../post-transition-metals/index.html">Pós-Transição</a></li>
+      <li><a href="../metalloids/index.html">Metaloides</a></li>
+      <li><a href="../reactive-nonmetals/index.html">Não Metais</a></li>
+      <li><a href="../noble-gases/index.html">Gases Nobres</a></li>
+      <li><a href="../lanthanides/index.html">Lantanídeos</a></li>
+      <li><a href="../actinides/index.html">Actinídeos</a></li>
+      <li><a href="../unknown-properties/index.html">Desconhecidos</a></li>
+      <li><a href="../animations/index.html">Animações</a></li>
+      <li><a href="../about/index.html" class="active">Sobre</a></li>
+    </ul>
+  </nav>
+  <div class="glow-line"></div>
+  <a class="back-link" href="../index.html">Voltar à Tabela</a>
+
+  <div class="about-hero">
+    <h1>SOBRE NÓS</h1>
+  </div>
+
+  <div class="team-grid">
+
+    <!-- MEMBRO 1 — Substitui com os teus dados -->
+    <div class="member-card">
+      <div class="member-top">
+        <img class="member-avatar" src="fotos/Daniel.JPG">
+        <div>
+          <div class="member-name">Daniel Grancho</div>
+          <div class="member-number">Nº 2025179361 · 2025179361@estudantes.ips.pt</div>
+          <div class="member-role">Definição da hierarquia do site, criação do index.html, organização da grelha (CSS Grid) e estrutura de pastas.</div>
+
+        </div>
+      </div>
+      <div class="member-body">
+        <div class="member-interests">
+          <h4>INTERESSES</h4>
+          <div class="tags">
+            <span class="tag">Desporto</span>
+            <span class="tag">Dados</span>
+            <span class="tag">Tecnologia</span>
+            <span class="tag">Música</span>
+          </div>
+      </div>
+      <div class="member-links">
+          <a class="social-link" href="https://github.com/Zyrex7D7" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-link" href="https://www.linkedin.com/in/daniel-grancho-932598226" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMBRO 2 — Substitui com os teus dados -->
+    <div class="member-card">
+      <div class="member-top">
+        <img class="member-avatar" src="fotos/Rodri.jpeg">
+        <div>
+          <div class="member-name">Rodrigo Castanheira</div>
+          <div class="member-number">Nº 2025176885 · 2025176885@alunos.ips.pt</div>
+          <div class="member-role">Implementação do esquema de cores, definição das fontes, responsividade do layout e estilo das tabelas por categoria.</div>
+        </div>
+    </div>
+      <div class="member-body">
+        <div class="member-interests">
+          <h4>INTERESSES</h4>
+          <div class="tags">
+            <span class="tag">Programação</span>
+            <span class="tag">Ciências</span>
+            <span class="tag">Jogos</span>
+            <span class="tag">Desporto</span>
+          </div>
+        </div>
+        <div class="member-links">
+          <a class="social-link" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-link" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECT INFO -->
+  <div class="project-info">
+    <div class="project-box">
+      <h2>SOBRE O PROJETO</h2>
+      <p>
+        Este website foi desenvolvido no âmbito da Unidade Curricular de <strong>Introdução à Programação para a Web</strong>
+        da Escola Superior de Tecnologia de Setúbal, Instituto Politécnico de Setúbal, no ano letivo de 2025/2026.
+      </p>
+      <p>
+        O objetivo foi criar um site estático e responsivo dedicado à divulgação e aprendizagem da Tabela Periódica,
+        permitindo explorar os 118 elementos químicos organizados por categorias, com animações CSS e navegação intuitiva.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-badge">HTML5</span>
+        <span class="tech-badge">CSS3</span>
+        <span class="tech-badge">CSS Grid</span>
+        <span class="tech-badge">CSS Animations</span>
+        <span class="tech-badge">Responsive Design</span>
+        <span class="tech-badge">CSS Variables</span>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>Tabela Periódica · Introdução à Programação para a Web · Escola Superior de Tecnologia de Setúbal · 2025/2026</p></footer>
+  <script>function toggleMenu(){document.getElementById('navMenu').classList.toggle('open');document.querySelector('.nav-toggle').classList.toggle('open');}</script>
+</body>
+</html>

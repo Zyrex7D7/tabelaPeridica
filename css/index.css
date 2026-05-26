@@ -1,0 +1,276 @@
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  padding: 5rem 2rem 4rem;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(59,158,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.hero-title span {
+  color: var(--accent);
+  display: block;
+}
+.hero-desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* ===== FILTER BAR ===== */
+.filter-section {
+  padding: 1.5rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.filter-btn {
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-btn:hover {
+  border-color: var(--c, var(--accent));
+  color: var(--c, var(--accent));
+}
+.filter-btn.active {
+  background: var(--c, var(--accent));
+  border-color: var(--c, var(--accent));
+  color: var(--bg);
+  font-weight: 600;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: center;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+.legend-item i {
+  display: block;
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ===== PERIODIC TABLE GRID ===== */
+.table-wrapper {
+  padding: 2rem 1rem 3rem;
+  overflow-x: auto;
+}
+
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(10, auto);
+  gap: 3px;
+  min-width: 900px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Gap row between main table and f-block */
+.pt-grid::after {
+  content: '';
+  grid-column: 1 / -1;
+  grid-row: 8;
+  height: 0.5rem;
+}
+
+/* ===== ELEMENT CELL ===== */
+.el {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.3s ease;
+  min-height: 52px;
+  text-align: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+.el::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  transition: opacity 0.2s;
+}
+
+.el:hover {
+  transform: scale(1.15);
+  z-index: 10;
+  border-color: rgba(255,255,255,0.2);
+}
+.el:hover::before { opacity: 0.25; }
+
+/* Category color fills */
+.el.alkali           { color: var(--alkali); }
+.el.alkali::before   { background: var(--alkali); }
+.el.alkaline         { color: var(--alkaline); }
+.el.alkaline::before { background: var(--alkaline); }
+.el.transition       { color: var(--transition); }
+.el.transition::before { background: var(--transition); }
+.el.post-transition  { color: var(--post-transition); }
+.el.post-transition::before { background: var(--post-transition); }
+.el.metalloid        { color: var(--metalloid); }
+.el.metalloid::before { background: var(--metalloid); }
+.el.reactive-nonmetal { color: var(--reactive-nonmetal); }
+.el.reactive-nonmetal::before { background: var(--reactive-nonmetal); }
+.el.noble            { color: var(--noble); }
+.el.noble::before    { background: var(--noble); }
+.el.lanthanide       { color: var(--lanthanide); }
+.el.lanthanide::before { background: var(--lanthanide); }
+.el.actinide         { color: var(--actinide); }
+.el.actinide::before { background: var(--actinide); }
+.el.unknown          { color: var(--unknown); }
+.el.unknown::before  { background: var(--unknown); }
+
+/* Classes que o JS vai aplicar ao Tooltip */
+.tooltip.alkali .tt-sym { color: var(--alkali); }
+.tooltip.alkaline .tt-sym { color: var(--alkaline); }
+.tooltip.transition .tt-sym { color: var(--transition); }
+.tooltip.post-transition .tt-sym { color: var(--post-transition); }
+.tooltip.metalloid .tt-sym { color: var(--metalloid); }
+.tooltip.reactive-nonmetal .tt-sym { color: var(--reactive-nonmetal); }
+.tooltip.noble .tt-sym { color: var(--noble); }
+.tooltip.lanthanide .tt-sym { color: var(--lanthanide); }
+.tooltip.actinide .tt-sym { color: var(--actinide); }
+.tooltip.unknown .tt-sym { color: var(--unknown); }
+.el-num {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1;
+  position: relative;
+}
+.el-sym {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+  position: relative;
+}
+.el-name {
+  font-family: var(--font-body);
+  font-size: 0.38rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.2;
+  margin-top: 1px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Placeholder cells for f-block */
+.lant-placeholder,
+.act-placeholder {
+  cursor: default;
+  font-style: italic;
+}
+.lant-placeholder:hover,
+.act-placeholder:hover { transform: none; }
+
+/* Filter dim */
+.el.dimmed {
+  opacity: 0.12;
+  transform: scale(1);
+  pointer-events: none;
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 200;
+  backdrop-filter: blur(10px);
+}
+.tooltip.visible { opacity: 1; }
+.tt-num {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+.tt-sym {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tt-name {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.tt-cat {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+

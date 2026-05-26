@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Metais Alcalinos | Tabela Periódica</title>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/category.css"/>
+  <style>:root { --cat-color: var(--alkali); }</style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="nav-logo" href="../index.html">Tabela<span>.</span>Periódica</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="../alkali-metals/index.html">Alcalinos</a></li>
+      <li><a href="../alkaline-earth-metals/index.html">Alcalinoterrosos</a></li>
+      <li><a href="../transition-metals/index.html">Transição</a></li>
+      <li><a href="../post-transition-metals/index.html">Pós-Transição</a></li>
+      <li><a href="../metalloids/index.html">Metaloides</a></li>
+      <li><a href="../reactive-nonmetals/index.html">Não Metais</a></li>
+      <li><a href="../noble-gases/index.html">Gases Nobres</a></li>
+      <li><a href="../lanthanides/index.html">Lantanídeos</a></li>
+      <li><a href="../actinides/index.html">Actinídeos</a></li>
+      <li><a href="../unknown-properties/index.html">Desconhecidos</a></li>
+      <li><a href="../animations/index.html">Animações</a></li>
+      <li><a href="../about/index.html">Sobre</a></li>
+    </ul>
+  </nav>
+  <div class="glow-line"></div>
+  <a class="back-link" href="../index.html">Voltar à Tabela</a>
+  <div class="cat-header">
+    <div class="category-badge" style="color:var(--alkali); border-color:var(--alkali); opacity:0.8">Metais Alcalinos</div>
+    <h1>Metais Alcalinos</h1>
+    <p>Os metais alcalinos são elementos do Grupo 1 da Tabela Periódica, altamente reativos e macios. Reagem vigorosamente com a água, produzindo hidróxidos e libertando hidrogénio gasoso. Possuem apenas um eletrão na camada de valência, o que facilita as reações de oxidação.</p>
+    <div class="cat-stats">
+      <div class="stat"><div class="stat-val">7</div><div class="stat-lbl">ELEMENTOS</div></div>
+    </div>
+  </div>
+  <div class="glow-line"></div>
+  <div class="container" style="padding-top:2rem">
+    <table class="element-table">
+      <thead>
+        <tr>
+          <th>Nº Atómico</th>
+          <th>Símbolo</th>
+          <th>Nome</th>
+          <th class="hide-mobile">Massa Atómica (u)</th>
+          <th class="hide-mobile">Estado (25°C)</th>
+          <th>Mais Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="atomic-number">1</td><td class="symbol-cell" style="color:var(--alkali)">H</td><td>Hidrogénio</td><td class="hide-mobile">1,008</td><td class="hide-mobile">Gás</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/Hidrog%C3%A9nio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+        <tr><td class="atomic-number">3</td><td class="symbol-cell" style="color:var(--alkali)">Li</td><td>Lítio</td><td class="hide-mobile">6,941</td><td class="hide-mobile">Sólido</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/L%C3%ADtio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+        <tr><td class="atomic-number">11</td><td class="symbol-cell" style="color:var(--alkali)">Na</td><td>Sódio</td><td class="hide-mobile">22,990</td><td class="hide-mobile">Sólido</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/S%C3%B3dio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+        <tr><td class="atomic-number">19</td><td class="symbol-cell" style="color:var(--alkali)">K</td><td>Potássio</td><td class="hide-mobile">39,098</td><td class="hide-mobile">Sólido</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/Pot%C3%A1ssio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+        <tr><td class="atomic-number">37</td><td class="symbol-cell" style="color:var(--alkali)">Rb</td><td>Rubídio</td><td class="hide-mobile">85,468</td><td class="hide-mobile">Sólido</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/Rub%C3%ADdio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+        <tr><td class="atomic-number">55</td><td class="symbol-cell" style="color:var(--alkali)">Cs</td><td>Césio</td><td class="hide-mobile">132,905</td><td class="hide-mobile">Sólido</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/C%C3%A9sio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+        <tr><td class="atomic-number">87</td><td class="symbol-cell" style="color:var(--alkali)">Fr</td><td>Frâncio</td><td class="hide-mobile">223</td><td class="hide-mobile">Sólido</td><td><a class="element-link" href="https://pt.wikipedia.org/wiki/Fr%C3%A2ncio" target="_blank" rel="noopener">Wikipedia</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <p>Tabela Periódica · Introdução à Programação para a Web · Escola Superior de Tecnologia de Setúbal · 2025/2026</p>
+  </footer>
+  <script>
+    function toggleMenu(){
+      document.getElementById('navMenu').classList.toggle('open');
+      document.querySelector('.nav-toggle').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

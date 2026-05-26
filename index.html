@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabela Periódica | IPW 2025/2026</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">Tabela<span>.</span>Periódica</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="alkali-metals/index.html">Alcalinos</a></li>
+      <li><a href="alkaline-earth-metals/index.html">Alcalinoterrosos</a></li>
+      <li><a href="transition-metals/index.html">Transição</a></li>
+      <li><a href="post-transition-metals/index.html">Pós-Transição</a></li>
+      <li><a href="metalloids/index.html">Metaloides</a></li>
+      <li><a href="reactive-nonmetals/index.html">Não Metais</a></li>
+      <li><a href="noble-gases/index.html">Gases Nobres</a></li>
+      <li><a href="lanthanides/index.html">Lantanídeos</a></li>
+      <li><a href="actinides/index.html">Actinídeos</a></li>
+      <li><a href="unknown-properties/index.html">Desconhecidos</a></li>
+      <li><a href="animations/index.html">Animações</a></li>
+      <li><a href="about/index.html">Sobre</a></li>
+    </ul>
+  </nav>
+  <div class="glow-line"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Introdução à Programação para a Web</p>
+      <h1 class="hero-title">Tabela<br/><span>Periódica</span></h1>
+      <p class="hero-desc">118 elementos. Organizados. Exploráveis. Interativos.</p>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <section class="filter-section">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="alkali" style="--c: var(--alkali)">Alcalinos</button>
+      <button class="filter-btn" data-filter="alkaline" style="--c: var(--alkaline)">Alcalinoterrosos</button>
+      <button class="filter-btn" data-filter="transition" style="--c: var(--transition)">Transição</button>
+      <button class="filter-btn" data-filter="post-transition" style="--c: var(--post-transition)">Pós-Transição</button>
+      <button class="filter-btn" data-filter="metalloid" style="--c: var(--metalloid)">Metaloides</button>
+      <button class="filter-btn" data-filter="reactive-nonmetal" style="--c: var(--reactive-nonmetal)">Não Metais</button>
+      <button class="filter-btn" data-filter="noble" style="--c: var(--noble)">Gases Nobres</button>
+      <button class="filter-btn" data-filter="lanthanide" style="--c: var(--lanthanide)">Lantanídeos</button>
+      <button class="filter-btn" data-filter="actinide" style="--c: var(--actinide)">Actinídeos</button>
+      <button class="filter-btn" data-filter="unknown" style="--c: var(--unknown)">Desconhecidos</button>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><i style="background:var(--alkali)"></i>Metais Alcalinos</span>
+      <span class="legend-item"><i style="background:var(--alkaline)"></i>Metais Alcalinoterrosos</span>
+      <span class="legend-item"><i style="background:var(--transition)"></i>Metais de Transição</span>
+      <span class="legend-item"><i style="background:var(--post-transition)"></i>Metais de Pós-Transição</span>
+      <span class="legend-item"><i style="background:var(--metalloid)"></i>Metaloides</span>
+      <span class="legend-item"><i style="background:var(--reactive-nonmetal)"></i>Não Metais Reativos</span>
+      <span class="legend-item"><i style="background:var(--noble)"></i>Gases Nobres</span>
+      <span class="legend-item"><i style="background:var(--lanthanide)"></i>Lantanídeos</span>
+      <span class="legend-item"><i style="background:var(--actinide)"></i>Actinídeos</span>
+      <span class="legend-item"><i style="background:var(--unknown)"></i>Desconhecidos</span>
+    </div>
+  </section>
+
+  <!-- PERIODIC TABLE GRID -->
+  <main class="table-wrapper">
+    <div class="pt-grid" id="ptGrid">
+
+      <!-- Period 1 -->
+      <div class="el metalloid"          style="grid-column:1;  grid-row:1"  data-cat="metalloid"          data-num="1"   data-sym="H"  data-name="Hidrogénio">
+        <span class="el-num">1</span><span class="el-sym">H</span><span class="el-name">Hidrogénio</span>
+      </div>
+      <div class="el noble"           style="grid-column:18; grid-row:1"  data-cat="noble"            data-num="2"   data-sym="He" data-name="Hélio">
+        <span class="el-num">2</span><span class="el-sym">He</span><span class="el-name">Hélio</span>
+      </div>
+
+      <!-- Period 2 -->
+      <div class="el alkali"          style="grid-column:1;  grid-row:2"  data-cat="alkali"          data-num="3"   data-sym="Li" data-name="Lítio">
+        <span class="el-num">3</span><span class="el-sym">Li</span><span class="el-name">Lítio</span>
+      </div>
+      <div class="el alkaline"        style="grid-column:2;  grid-row:2"  data-cat="alkaline"        data-num="4"   data-sym="Be" data-name="Berílio">
+        <span class="el-num">4</span><span class="el-sym">Be</span><span class="el-name">Berílio</span>
+      </div>
+      <div class="el metalloid"       style="grid-column:13; grid-row:2"  data-cat="metalloid"       data-num="5"   data-sym="B"  data-name="Boro">
+        <span class="el-num">5</span><span class="el-sym">B</span><span class="el-name">Boro</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:14; grid-row:2" data-cat="reactive-nonmetal" data-num="6" data-sym="C" data-name="Carbono">
+        <span class="el-num">6</span><span class="el-sym">C</span><span class="el-name">Carbono</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:15; grid-row:2" data-cat="reactive-nonmetal" data-num="7" data-sym="N" data-name="Azoto">
+        <span class="el-num">7</span><span class="el-sym">N</span><span class="el-name">Azoto</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:16; grid-row:2" data-cat="reactive-nonmetal" data-num="8" data-sym="O" data-name="Oxigénio">
+        <span class="el-num">8</span><span class="el-sym">O</span><span class="el-name">Oxigénio</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:17; grid-row:2" data-cat="reactive-nonmetal" data-num="9" data-sym="F" data-name="Flúor">
+        <span class="el-num">9</span><span class="el-sym">F</span><span class="el-name">Flúor</span>
+      </div>
+      <div class="el noble"           style="grid-column:18; grid-row:2"  data-cat="noble"            data-num="10"  data-sym="Ne" data-name="Néon">
+        <span class="el-num">10</span><span class="el-sym">Ne</span><span class="el-name">Néon</span>
+      </div>
+
+      <!-- Period 3 -->
+      <div class="el alkali"          style="grid-column:1;  grid-row:3"  data-cat="alkali"          data-num="11" data-sym="Na" data-name="Sódio">
+        <span class="el-num">11</span><span class="el-sym">Na</span><span class="el-name">Sódio</span>
+      </div>
+      <div class="el alkaline"        style="grid-column:2;  grid-row:3"  data-cat="alkaline"        data-num="12" data-sym="Mg" data-name="Magnésio">
+        <span class="el-num">12</span><span class="el-sym">Mg</span><span class="el-name">Magnésio</span>
+      </div>
+      <div class="el post-transition" style="grid-column:13; grid-row:3"  data-cat="post-transition" data-num="13" data-sym="Al" data-name="Alumínio">
+        <span class="el-num">13</span><span class="el-sym">Al</span><span class="el-name">Alumínio</span>
+      </div>
+      <div class="el metalloid"       style="grid-column:14; grid-row:3"  data-cat="metalloid"       data-num="14" data-sym="Si" data-name="Silício">
+        <span class="el-num">14</span><span class="el-sym">Si</span><span class="el-name">Silício</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:15; grid-row:3" data-cat="reactive-nonmetal" data-num="15" data-sym="P" data-name="Fósforo">
+        <span class="el-num">15</span><span class="el-sym">P</span><span class="el-name">Fósforo</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:16; grid-row:3" data-cat="reactive-nonmetal" data-num="16" data-sym="S" data-name="Enxofre">
+        <span class="el-num">16</span><span class="el-sym">S</span><span class="el-name">Enxofre</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:17; grid-row:3" data-cat="reactive-nonmetal" data-num="17" data-sym="Cl" data-name="Cloro">
+        <span class="el-num">17</span><span class="el-sym">Cl</span><span class="el-name">Cloro</span>
+      </div>
+      <div class="el noble"           style="grid-column:18; grid-row:3"  data-cat="noble"            data-num="18" data-sym="Ar" data-name="Árgon">
+        <span class="el-num">18</span><span class="el-sym">Ar</span><span class="el-name">Árgon</span>
+      </div>
+
+      <!-- Period 4 -->
+      <div class="el alkali"          style="grid-column:1;  grid-row:4"  data-cat="alkali"          data-num="19" data-sym="K"  data-name="Potássio">
+        <span class="el-num">19</span><span class="el-sym">K</span><span class="el-name">Potássio</span>
+      </div>
+      <div class="el alkaline"        style="grid-column:2;  grid-row:4"  data-cat="alkaline"        data-num="20" data-sym="Ca" data-name="Cálcio">
+        <span class="el-num">20</span><span class="el-sym">Ca</span><span class="el-name">Cálcio</span>
+      </div>
+      <div class="el transition"      style="grid-column:3;  grid-row:4"  data-cat="transition"      data-num="21" data-sym="Sc" data-name="Escândio">
+        <span class="el-num">21</span><span class="el-sym">Sc</span><span class="el-name">Escândio</span>
+      </div>
+      <div class="el transition"      style="grid-column:4;  grid-row:4"  data-cat="transition"      data-num="22" data-sym="Ti" data-name="Titânio">
+        <span class="el-num">22</span><span class="el-sym">Ti</span><span class="el-name">Titânio</span>
+      </div>
+      <div class="el transition"      style="grid-column:5;  grid-row:4"  data-cat="transition"      data-num="23" data-sym="V"  data-name="Vanádio">
+        <span class="el-num">23</span><span class="el-sym">V</span><span class="el-name">Vanádio</span>
+      </div>
+      <div class="el transition"      style="grid-column:6;  grid-row:4"  data-cat="transition"      data-num="24" data-sym="Cr" data-name="Crómio">
+        <span class="el-num">24</span><span class="el-sym">Cr</span><span class="el-name">Crómio</span>
+      </div>
+      <div class="el transition"      style="grid-column:7;  grid-row:4"  data-cat="transition"      data-num="25" data-sym="Mn" data-name="Manganês">
+        <span class="el-num">25</span><span class="el-sym">Mn</span><span class="el-name">Manganês</span>
+      </div>
+      <div class="el transition"      style="grid-column:8;  grid-row:4"  data-cat="transition"      data-num="26" data-sym="Fe" data-name="Ferro">
+        <span class="el-num">26</span><span class="el-sym">Fe</span><span class="el-name">Ferro</span>
+      </div>
+      <div class="el transition"      style="grid-column:9;  grid-row:4"  data-cat="transition"      data-num="27" data-sym="Co" data-name="Cobalto">
+        <span class="el-num">27</span><span class="el-sym">Co</span><span class="el-name">Cobalto</span>
+      </div>
+      <div class="el transition"      style="grid-column:10; grid-row:4"  data-cat="transition"      data-num="28" data-sym="Ni" data-name="Níquel">
+        <span class="el-num">28</span><span class="el-sym">Ni</span><span class="el-name">Níquel</span>
+      </div>
+      <div class="el transition"      style="grid-column:11; grid-row:4"  data-cat="transition"      data-num="29" data-sym="Cu" data-name="Cobre">
+        <span class="el-num">29</span><span class="el-sym">Cu</span><span class="el-name">Cobre</span>
+      </div>
+      <div class="el transition"      style="grid-column:12; grid-row:4"  data-cat="transition"      data-num="30" data-sym="Zn" data-name="Zinco">
+        <span class="el-num">30</span><span class="el-sym">Zn</span><span class="el-name">Zinco</span>
+      </div>
+      <div class="el post-transition" style="grid-column:13; grid-row:4"  data-cat="post-transition" data-num="31" data-sym="Ga" data-name="Gálio">
+        <span class="el-num">31</span><span class="el-sym">Ga</span><span class="el-name">Gálio</span>
+      </div>
+      <div class="el metalloid"       style="grid-column:14; grid-row:4"  data-cat="metalloid"       data-num="32" data-sym="Ge" data-name="Germânio">
+        <span class="el-num">32</span><span class="el-sym">Ge</span><span class="el-name">Germânio</span>
+      </div>
+      <div class="el metalloid"       style="grid-column:15; grid-row:4"  data-cat="metalloid"       data-num="33" data-sym="As" data-name="Arsénio">
+        <span class="el-num">33</span><span class="el-sym">As</span><span class="el-name">Arsénio</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:16; grid-row:4" data-cat="reactive-nonmetal" data-num="34" data-sym="Se" data-name="Selénio">
+        <span class="el-num">34</span><span class="el-sym">Se</span><span class="el-name">Selénio</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:17; grid-row:4" data-cat="reactive-nonmetal" data-num="35" data-sym="Br" data-name="Bromo">
+        <span class="el-num">35</span><span class="el-sym">Br</span><span class="el-name">Bromo</span>
+      </div>
+      <div class="el noble"           style="grid-column:18; grid-row:4"  data-cat="noble"            data-num="36" data-sym="Kr" data-name="Crípton">
+        <span class="el-num">36</span><span class="el-sym">Kr</span><span class="el-name">Crípton</span>
+      </div>
+
+      <!-- Period 5 -->
+      <div class="el alkali"          style="grid-column:1;  grid-row:5"  data-cat="alkali"          data-num="37" data-sym="Rb" data-name="Rubídio">
+        <span class="el-num">37</span><span class="el-sym">Rb</span><span class="el-name">Rubídio</span>
+      </div>
+      <div class="el alkaline"        style="grid-column:2;  grid-row:5"  data-cat="alkaline"        data-num="38" data-sym="Sr" data-name="Estrôncio">
+        <span class="el-num">38</span><span class="el-sym">Sr</span><span class="el-name">Estrôncio</span>
+      </div>
+      <div class="el transition"      style="grid-column:3;  grid-row:5"  data-cat="transition"      data-num="39" data-sym="Y"  data-name="Ítrio">
+        <span class="el-num">39</span><span class="el-sym">Y</span><span class="el-name">Ítrio</span>
+      </div>
+      <div class="el transition"      style="grid-column:4;  grid-row:5"  data-cat="transition"      data-num="40" data-sym="Zr" data-name="Zircônio">
+        <span class="el-num">40</span><span class="el-sym">Zr</span><span class="el-name">Zircônio</span>
+      </div>
+      <div class="el transition"      style="grid-column:5;  grid-row:5"  data-cat="transition"      data-num="41" data-sym="Nb" data-name="Nióbio">
+        <span class="el-num">41</span><span class="el-sym">Nb</span><span class="el-name">Nióbio</span>
+      </div>
+      <div class="el transition"      style="grid-column:6;  grid-row:5"  data-cat="transition"      data-num="42" data-sym="Mo" data-name="Molibdénio">
+        <span class="el-num">42</span><span class="el-sym">Mo</span><span class="el-name">Molibdénio</span>
+      </div>
+      <div class="el transition"      style="grid-column:7;  grid-row:5"  data-cat="transition"      data-num="43" data-sym="Tc" data-name="Tecnécio">
+        <span class="el-num">43</span><span class="el-sym">Tc</span><span class="el-name">Tecnécio</span>
+      </div>
+      <div class="el transition"      style="grid-column:8;  grid-row:5"  data-cat="transition"      data-num="44" data-sym="Ru" data-name="Ruténio">
+        <span class="el-num">44</span><span class="el-sym">Ru</span><span class="el-name">Ruténio</span>
+      </div>
+      <div class="el transition"      style="grid-column:9;  grid-row:5"  data-cat="transition"      data-num="45" data-sym="Rh" data-name="Ródio">
+        <span class="el-num">45</span><span class="el-sym">Rh</span><span class="el-name">Ródio</span>
+      </div>
+      <div class="el transition"      style="grid-column:10; grid-row:5"  data-cat="transition"      data-num="46" data-sym="Pd" data-name="Paládio">
+        <span class="el-num">46</span><span class="el-sym">Pd</span><span class="el-name">Paládio</span>
+      </div>
+      <div class="el transition"      style="grid-column:11; grid-row:5"  data-cat="transition"      data-num="47" data-sym="Ag" data-name="Prata">
+        <span class="el-num">47</span><span class="el-sym">Ag</span><span class="el-name">Prata</span>
+      </div>
+      <div class="el transition"      style="grid-column:12; grid-row:5"  data-cat="transition"      data-num="48" data-sym="Cd" data-name="Cádmio">
+        <span class="el-num">48</span><span class="el-sym">Cd</span><span class="el-name">Cádmio</span>
+      </div>
+      <div class="el post-transition" style="grid-column:13; grid-row:5"  data-cat="post-transition" data-num="49" data-sym="In" data-name="Índio">
+        <span class="el-num">49</span><span class="el-sym">In</span><span class="el-name">Índio</span>
+      </div>
+      <div class="el post-transition" style="grid-column:14; grid-row:5"  data-cat="post-transition" data-num="50" data-sym="Sn" data-name="Estanho">
+        <span class="el-num">50</span><span class="el-sym">Sn</span><span class="el-name">Estanho</span>
+      </div>
+      <div class="el metalloid"       style="grid-column:15; grid-row:5"  data-cat="metalloid"       data-num="51" data-sym="Sb" data-name="Antimônio">
+        <span class="el-num">51</span><span class="el-sym">Sb</span><span class="el-name">Antimônio</span>
+      </div>
+      <div class="el metalloid"       style="grid-column:16; grid-row:5"  data-cat="metalloid"       data-num="52" data-sym="Te" data-name="Telúrio">
+        <span class="el-num">52</span><span class="el-sym">Te</span><span class="el-name">Telúrio</span>
+      </div>
+      <div class="el reactive-nonmetal" style="grid-column:17; grid-row:5" data-cat="reactive-nonmetal" data-num="53" data-sym="I" data-name="Iodo">
+        <span class="el-num">53</span><span class="el-sym">I</span><span class="el-name">Iodo</span>
+      </div>
+      <div class="el noble"           style="grid-column:18; grid-row:5"  data-cat="noble"            data-num="54" data-sym="Xe" data-name="Xénon">
+        <span class="el-num">54</span><span class="el-sym">Xe</span><span class="el-name">Xénon</span>
+      </div>
+
+      <!-- Period 6 -->
+      <div class="el alkali"          style="grid-column:1;  grid-row:6"  data-cat="alkali"          data-num="55" data-sym="Cs" data-name="Césio">
+        <span class="el-num">55</span><span class="el-sym">Cs</span><span class="el-name">Césio</span>
+      </div>
+      <div class="el alkaline"        style="grid-column:2;  grid-row:6"  data-cat="alkaline"        data-num="56" data-sym="Ba" data-name="Bário">
+        <span class="el-num">56</span><span class="el-sym">Ba</span><span class="el-name">Bário</span>
+      </div>
+      <div class="el lanthanide lant-placeholder" style="grid-column:1; grid-row:9">
+        <span class="el-sym" style="font-size:0.55rem;letter-spacing:0">57–71</span>
+        <span class="el-name">Lantanídeos</span>
+      </div>
+      <div class="arrow" style="grid-column: 2 / 4; grid-row: 9; --arrow-color: var(--lanthanide);"></div>
+      <div class="el transition"      style="grid-column:4;  grid-row:6"  data-cat="transition"      data-num="72" data-sym="Hf" data-name="Háfnio">
+        <span class="el-num">72</span><span class="el-sym">Hf</span><span class="el-name">Háfnio</span>
+      </div>
+      <div class="el transition"      style="grid-column:5;  grid-row:6"  data-cat="transition"      data-num="73" data-sym="Ta" data-name="Tântalo">
+        <span class="el-num">73</span><span class="el-sym">Ta</span><span class="el-name">Tântalo</span>
+      </div>
+      <div class="el transition"      style="grid-column:6;  grid-row:6"  data-cat="transition"      data-num="74" data-sym="W"  data-name="Tungsténio">
+        <span class="el-num">74</span><span class="el-sym">W</span><span class="el-name">Tungsténio</span>
+      </div>
+      <div class="el transition"      style="grid-column:7;  grid-row:6"  data-cat="transition"      data-num="75" data-sym="Re" data-name="Rénio">
+        <span class="el-num">75</span><span class="el-sym">Re</span><span class="el-name">Rénio</span>
+      </div>
+      <div class="el transition"      style="grid-column:8;  grid-row:6"  data-cat="transition"      data-num="76" data-sym="Os" data-name="Ósmio">
+        <span class="el-num">76</span><span class="el-sym">Os</span><span class="el-name">Ósmio</span>
+      </div>
+      <div class="el transition"      style="grid-column:9;  grid-row:6"  data-cat="transition"      data-num="77" data-sym="Ir" data-name="Irídio">
+        <span class="el-num">77</span><span class="el-sym">Ir</span><span class="el-name">Irídio</span>
+      </div>
+      <div class="el transition"      style="grid-column:10; grid-row:6"  data-cat="transition"      data-num="78" data-sym="Pt" data-name="Platina">
+        <span class="el-num">78</span><span class="el-sym">Pt</span><span class="el-name">Platina</span>
+      </div>
+      <div class="el transition"      style="grid-column:11; grid-row:6"  data-cat="transition"      data-num="79" data-sym="Au" data-name="Ouro">
+        <span class="el-num">79</span><span class="el-sym">Au</span><span class="el-name">Ouro</span>
+      </div>
+      <div class="el transition"      style="grid-column:12; grid-row:6"  data-cat="transition"      data-num="80" data-sym="Hg" data-name="Mercúrio">
+        <span class="el-num">80</span><span class="el-sym">Hg</span><span class="el-name">Mercúrio</span>
+      </div>
+      <div class="el post-transition" style="grid-column:13; grid-row:6"  data-cat="post-transition" data-num="81" data-sym="Tl" data-name="Tálio">
+        <span class="el-num">81</span><span class="el-sym">Tl</span><span class="el-name">Tálio</span>
+      </div>
+      <div class="el post-transition" style="grid-column:14; grid-row:6"  data-cat="post-transition" data-num="82" data-sym="Pb" data-name="Chumbo">
+        <span class="el-num">82</span><span class="el-sym">Pb</span><span class="el-name">Chumbo</span>
+      </div>
+      <div class="el post-transition" style="grid-column:15; grid-row:6"  data-cat="post-transition" data-num="83" data-sym="Bi" data-name="Bismuto">
+        <span class="el-num">83</span><span class="el-sym">Bi</span><span class="el-name">Bismuto</span>
+      </div>
+      <div class="el post-transition"       style="grid-column:16; grid-row:6"  data-cat="post-transition"       data-num="84" data-sym="Po" data-name="Polônio">
+        <span class="el-num">84</span><span class="el-sym">Po</span><span class="el-name">Polônio</span>
+      </div>
+      <div class="el post-transition" style="grid-column:17; grid-row:6" data-cat="post-transition" data-num="85" data-sym="At" data-name="Ástato">
+        <span class="el-num">85</span><span class="el-sym">At</span><span class="el-name">Ástato</span>
+      </div>
+      <div class="el noble"           style="grid-column:18; grid-row:6"  data-cat="noble"            data-num="86" data-sym="Rn" data-name="Radão">
+        <span class="el-num">86</span><span class="el-sym">Rn</span><span class="el-name">Radão</span>
+      </div>
+
+      <!-- Period 7 -->
+      <div class="el alkali"          style="grid-column:1;  grid-row:7"  data-cat="alkali"          data-num="87"  data-sym="Fr"  data-name="Frâncio">
+        <span class="el-num">87</span><span class="el-sym">Fr</span><span class="el-name">Frâncio</span>
+      </div>
+      <div class="el alkaline"        style="grid-column:2;  grid-row:7"  data-cat="alkaline"        data-num="88"  data-sym="Ra"  data-name="Rádio">
+        <span class="el-num">88</span><span class="el-sym">Ra</span><span class="el-name">Rádio</span>
+      </div>
+      <div class="el actinide act-placeholder"  style="grid-column:1;  grid-row:10">
+        <span class="el-sym" style="font-size:0.55rem;letter-spacing:0">89–103</span>
+        <span class="el-name">Actinídeos</span>
+      </div>
+      <div class="arrow" style="grid-column: 2 / 4; grid-row: 10; --arrow-color: var(--actinide);"></div>
+      <div class="el transition"      style="grid-column:4;  grid-row:7"  data-cat="transition"      data-num="104" data-sym="Rf"  data-name="Rutherfórdio">
+        <span class="el-num">104</span><span class="el-sym">Rf</span><span class="el-name">Rutherfórdio</span>
+      </div>
+      <div class="el transition"      style="grid-column:5;  grid-row:7"  data-cat="transition"      data-num="105" data-sym="Db"  data-name="Dúbnio">
+        <span class="el-num">105</span><span class="el-sym">Db</span><span class="el-name">Dúbnio</span>
+      </div>
+      <div class="el transition"      style="grid-column:6;  grid-row:7"  data-cat="transition"      data-num="106" data-sym="Sg"  data-name="Seabórgio">
+        <span class="el-num">106</span><span class="el-sym">Sg</span><span class="el-name">Seabórgio</span>
+      </div>
+      <div class="el transition"      style="grid-column:7;  grid-row:7"  data-cat="transition"      data-num="107" data-sym="Bh"  data-name="Bóhrio">
+        <span class="el-num">107</span><span class="el-sym">Bh</span><span class="el-name">Bóhrio</span>
+      </div>
+      <div class="el transition"      style="grid-column:8;  grid-row:7"  data-cat="transition"      data-num="108" data-sym="Hs"  data-name="Héssio">
+        <span class="el-num">108</span><span class="el-sym">Hs</span><span class="el-name">Héssio</span>
+      </div>
+      <div class="el unknown"         style="grid-column:9;  grid-row:7"  data-cat="unknown"         data-num="109" data-sym="Mt"  data-name="Meitnério">
+        <span class="el-num">109</span><span class="el-sym">Mt</span><span class="el-name">Meitnério</span>
+      </div>
+      <div class="el unknown"         style="grid-column:10; grid-row:7"  data-cat="unknown"         data-num="110" data-sym="Ds"  data-name="Darmstádtio">
+        <span class="el-num">110</span><span class="el-sym">Ds</span><span class="el-name">Darmstádtio</span>
+      </div>
+      <div class="el unknown"         style="grid-column:11; grid-row:7"  data-cat="unknown"         data-num="111" data-sym="Rg"  data-name="Roentgênio">
+        <span class="el-num">111</span><span class="el-sym">Rg</span><span class="el-name">Roentgênio</span>
+      </div>
+      <div class="el unknown"         style="grid-column:12; grid-row:7"  data-cat="unknown"         data-num="112" data-sym="Cn"  data-name="Copernício">
+        <span class="el-num">112</span><span class="el-sym">Cn</span><span class="el-name">Copernício</span>
+      </div>
+      <div class="el unknown"         style="grid-column:13; grid-row:7"  data-cat="unknown"         data-num="113" data-sym="Nh"  data-name="Nihônio">
+        <span class="el-num">113</span><span class="el-sym">Nh</span><span class="el-name">Nihônio</span>
+      </div>
+      <div class="el unknown" style="grid-column:14; grid-row:7"  data-cat="unknown" data-num="114" data-sym="Fl"  data-name="Fleróvio">
+        <span class="el-num">114</span><span class="el-sym">Fl</span><span class="el-name">Fleróvio</span>
+      </div>
+      <div class="el unknown"         style="grid-column:15; grid-row:7"  data-cat="unknown"         data-num="115" data-sym="Mc"  data-name="Moscóvio">
+        <span class="el-num">115</span><span class="el-sym">Mc</span><span class="el-name">Moscóvio</span>
+      </div>
+      <div class="el unknown" style="grid-column:16; grid-row:7"  data-cat="unknown" data-num="116" data-sym="Lv"  data-name="Livermório">
+        <span class="el-num">116</span><span class="el-sym">Lv</span><span class="el-name">Livermório</span>
+      </div>
+      <div class="el unknown"         style="grid-column:17; grid-row:7"  data-cat="unknown"         data-num="117" data-sym="Ts"  data-name="Tenesso">
+        <span class="el-num">117</span><span class="el-sym">Ts</span><span class="el-name">Tenesso</span>
+      </div>
+      <div class="el unknown"           style="grid-column:18; grid-row:7"  data-cat="unknown"            data-num="118" data-sym="Og"  data-name="Oganessão">
+        <span class="el-num">118</span><span class="el-sym">Og</span><span class="el-name">Oganessão</span>
+      </div>
+
+      <!-- LANTHANIDES ROW (row 9) -->
+      <div class="el lanthanide"      style="grid-column:4;  grid-row:9"  data-cat="lanthanide"      data-num="57"  data-sym="Ce" data-name="Cério">
+        <span class="el-num">57</span><span class="el-sym">La</span><span class="el-name">Lantânio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:5;  grid-row:9"  data-cat="lanthanide"      data-num="58"  data-sym="Ce" data-name="Cério">
+        <span class="el-num">58</span><span class="el-sym">Ce</span><span class="el-name">Cério</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:6;  grid-row:9"  data-cat="lanthanide"      data-num="59"  data-sym="Pr" data-name="Praseodímio">
+        <span class="el-num">59</span><span class="el-sym">Pr</span><span class="el-name">Praseodímio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:7;  grid-row:9"  data-cat="lanthanide"      data-num="60"  data-sym="Nd" data-name="Neodímio">
+        <span class="el-num">60</span><span class="el-sym">Nd</span><span class="el-name">Neodímio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:8;  grid-row:9"  data-cat="lanthanide"      data-num="61"  data-sym="Pm" data-name="Promécio">
+        <span class="el-num">61</span><span class="el-sym">Pm</span><span class="el-name">Promécio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:9;  grid-row:9"  data-cat="lanthanide"      data-num="62"  data-sym="Sm" data-name="Samário">
+        <span class="el-num">62</span><span class="el-sym">Sm</span><span class="el-name">Samário</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:10; grid-row:9"  data-cat="lanthanide"      data-num="63"  data-sym="Eu" data-name="Európio">
+        <span class="el-num">63</span><span class="el-sym">Eu</span><span class="el-name">Európio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:11; grid-row:9"  data-cat="lanthanide"      data-num="64"  data-sym="Gd" data-name="Gadolínio">
+        <span class="el-num">64</span><span class="el-sym">Gd</span><span class="el-name">Gadolínio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:12; grid-row:9"  data-cat="lanthanide"      data-num="65"  data-sym="Tb" data-name="Térbio">
+        <span class="el-num">65</span><span class="el-sym">Tb</span><span class="el-name">Térbio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:13; grid-row:9"  data-cat="lanthanide"      data-num="66"  data-sym="Dy" data-name="Disprósio">
+        <span class="el-num">66</span><span class="el-sym">Dy</span><span class="el-name">Disprósio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:14; grid-row:9"  data-cat="lanthanide"      data-num="67"  data-sym="Ho" data-name="Hólmio">
+        <span class="el-num">67</span><span class="el-sym">Ho</span><span class="el-name">Hólmio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:15; grid-row:9"  data-cat="lanthanide"      data-num="68"  data-sym="Er" data-name="Érbio">
+        <span class="el-num">68</span><span class="el-sym">Er</span><span class="el-name">Érbio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:16; grid-row:9"  data-cat="lanthanide"      data-num="69"  data-sym="Tm" data-name="Túlio">
+        <span class="el-num">69</span><span class="el-sym">Tm</span><span class="el-name">Túlio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:17; grid-row:9"  data-cat="lanthanide"      data-num="70"  data-sym="Yb" data-name="Itérbio">
+        <span class="el-num">70</span><span class="el-sym">Yb</span><span class="el-name">Itérbio</span>
+      </div>
+      <div class="el lanthanide"      style="grid-column:18; grid-row:9"  data-cat="lanthanide"      data-num="71"  data-sym="Lu" data-name="Lutécio">
+        <span class="el-num">71</span><span class="el-sym">Lu</span><span class="el-name">Lutécio</span>
+      </div>
+
+      <!-- ACTINIDES ROW (row 10) -->
+      <div class="el actinide"        style="grid-column:4;  grid-row:10" data-cat="actinide"        data-num="89"  data-sym="Ac"  data-name="Actínio">
+        <span class="el-num">89</span><span class="el-sym">Ac</span><span class="el-name">Actínio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:5;  grid-row:10" data-cat="actinide"        data-num="90"  data-sym="Th"  data-name="Tório">
+        <span class="el-num">90</span><span class="el-sym">Th</span><span class="el-name">Tório</span>
+      </div>
+      <div class="el actinide"        style="grid-column:6;  grid-row:10" data-cat="actinide"        data-num="91"  data-sym="Pa"  data-name="Protactínio">
+        <span class="el-num">91</span><span class="el-sym">Pa</span><span class="el-name">Protactínio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:7;  grid-row:10" data-cat="actinide"        data-num="92"  data-sym="U"   data-name="Urânio">
+        <span class="el-num">92</span><span class="el-sym">U</span><span class="el-name">Urânio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:8;  grid-row:10" data-cat="actinide"        data-num="93"  data-sym="Np"  data-name="Neptúnio">
+        <span class="el-num">93</span><span class="el-sym">Np</span><span class="el-name">Neptúnio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:9;  grid-row:10" data-cat="actinide"        data-num="94"  data-sym="Pu"  data-name="Plutônio">
+        <span class="el-num">94</span><span class="el-sym">Pu</span><span class="el-name">Plutônio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:10; grid-row:10" data-cat="actinide"        data-num="95"  data-sym="Am"  data-name="Amerício">
+        <span class="el-num">95</span><span class="el-sym">Am</span><span class="el-name">Amerício</span>
+      </div>
+      <div class="el actinide"        style="grid-column:11; grid-row:10" data-cat="actinide"        data-num="96"  data-sym="Cm"  data-name="Cúrio">
+        <span class="el-num">96</span><span class="el-sym">Cm</span><span class="el-name">Cúrio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:12; grid-row:10" data-cat="actinide"        data-num="97"  data-sym="Bk"  data-name="Berkélio">
+        <span class="el-num">97</span><span class="el-sym">Bk</span><span class="el-name">Berkélio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:13; grid-row:10" data-cat="actinide"        data-num="98"  data-sym="Cf"  data-name="Califórnio">
+        <span class="el-num">98</span><span class="el-sym">Cf</span><span class="el-name">Califórnio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:14; grid-row:10" data-cat="actinide"        data-num="99"  data-sym="Es"  data-name="Einstéinio">
+        <span class="el-num">99</span><span class="el-sym">Es</span><span class="el-name">Einstéinio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:15; grid-row:10" data-cat="actinide"        data-num="100" data-sym="Fm"  data-name="Férmio">
+        <span class="el-num">100</span><span class="el-sym">Fm</span><span class="el-name">Férmio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:16; grid-row:10" data-cat="actinide"        data-num="101" data-sym="Md"  data-name="Mendeléevio">
+        <span class="el-num">101</span><span class="el-sym">Md</span><span class="el-name">Mendeléevio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:17; grid-row:10" data-cat="actinide"        data-num="102" data-sym="No"  data-name="Nobélio">
+        <span class="el-num">102</span><span class="el-sym">No</span><span class="el-name">Nobélio</span>
+      </div>
+      <div class="el actinide"        style="grid-column:18; grid-row:10" data-cat="actinide"        data-num="103" data-sym="Lr"  data-name="Laurêncio">
+        <span class="el-num">103</span><span class="el-sym">Lr</span><span class="el-name">Laurêncio</span>
+      </div>
+    </div><!-- end .pt-grid -->
+  </main>
+
+
+  
+  <!-- TOOLTIP -->
+  <div class="tooltip" id="tooltip" aria-hidden="true">
+    <span class="tt-num"></span>
+    <span class="tt-sym"></span>
+    <span class="tt-name"></span>
+    <span class="tt-cat"></span>
+  </div>
+
+  <footer>
+    <p>Tabela Periódica · Introdução à Programação para a Web · Escola Superior de Tecnologia de Setúbal · 2025/2026</p>
+  </footer>
+
+  <script src="css/main.js"></script>
+</body>
+</html>
+
+<style>
+  .arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 15px; /* Dá uma margem para a seta não ficar colada às caixas */
+  width: 100%;
+  height: 100%;
+}
+
+/* Corpo da seta (a linha) */
+.arrow::before {
+  content: '';
+  flex-grow: 1; /* Faz a linha esticar e ocupar todo o espaço disponível nas colunas 2 e 3 */
+  height: 3px;  /* Espessura da linha */
+  background-color: var(--arrow-color, #ccc); 
+  border-radius: 2px;
+}
+
+/* Ponta da seta (o triângulo) */
+.arrow::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--arrow-color, #ccc); /* Desenha um triângulo a apontar para a direita */
+}
+</style>
